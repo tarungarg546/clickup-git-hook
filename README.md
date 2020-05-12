@@ -1,6 +1,7 @@
 # clickup-git-hook
 
-Effective engineers invest in tools to increase efficiency.
+ClickUp hook to auto-prepend ClickUp task ID for ClickUp<>GitHub integration https://clickup.com/integrations/github
+
 
 ### Inspiration :- 
 - Effective engineer book - https://blog.d46.us/effective-eng-summary/ , where they say "Effective engineers invest in tools to increase efficiency.", every second saved of team is golden.
@@ -9,21 +10,21 @@ Effective engineers invest in tools to increase efficiency.
 
 
 
-Past(without this hook)
+#### Past(without this hook)
 - You enable GitHub integration for your ClickUp space.
 - You create a new branch for your clickup task.
 - Now, when move onto making Git commits, you'll need to manually specify ClickUp task ID in commit msg something like `git commit -m "[#taskID] Commit msg"
 - Pain point here is, every time you'll need to remember about task ID and make sure with every commit you're prepending it.
 - Done, and now every commit and PR is tracked on ClickUp.
 
-Future(with this hook)
+#### Future(with this hook)
 - Same as in past.
 - You create a new branch with "<task_id>_<meta>" where task_id is ID of task on ClickUp starting with "#" and meta is any free form text regarding this branch/feature/bug
 - Now, when move onto making Git commits, you'll **need not to** manually specify ClickUp task ID, you can commit directly like `git commit -m "Commit msg" and this hook will figure out basis your the taskID specified in the branch what to prepend the commit with.
 - Done, and now every commit and PR is tracked on ClickUp.
 
 
-Note - Your ClickUp task ID should start with # and should atleast have 4 characters, it does not matter where this info is present in the branch.
+<i>Note - Your ClickUp task ID should start with # and should atleast have 4 characters, it does not matter where this info is present in the branch.</i>
 
 ## Steps to run
 - Move old pre-commit file with `mv .git/hooks/prepare-commit-msg .git/hooks/prepare-commit-msg.old`(WARNING:- If you're using any old prepare-commit-hooks please take care of them)
