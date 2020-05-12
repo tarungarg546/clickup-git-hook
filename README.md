@@ -1,0 +1,1 @@
+# clickup-git-hook
